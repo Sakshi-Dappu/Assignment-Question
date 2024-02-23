@@ -48,5 +48,56 @@
         </div>
       </div>
     </div>
+    <script>
+      //  JSON structure with image URLs
+      var imageArray = [
+          
+    {"image": "photo1.png"},
+    {"image": "photo2.png"},
+    {"image": "photo3.png"},
+        {"image": "photo4.png"}
+   
+
+
+          
+      ];
+
+      // Function to dynamically load images
+      function loadImages() {
+          var imagesContainer = document.getElementById("doctorImages");
+
+          // Loop through the imageArray and create image elements
+          imageArray.forEach(function (item) {
+              var cardDiv = document.createElement("div");
+              cardDiv.className = "card";
+              cardDiv.style.width = "15rem";
+
+              var imgElement = document.createElement("img");
+              imgElement.src = item.image;
+              imgElement.className = "card-img-top";
+              imgElement.alt = "doctor image";
+
+              var cardBodyDiv = document.createElement("div");
+              cardBodyDiv.className = "card-body";
+
+              var h5Element = document.createElement("h5");
+              h5Element.className = "card-text";
+              h5Element.textContent = "Dr. Wael Alomari"; // You can replace this with actual data
+
+              var pElement = document.createElement("p");
+              pElement.textContent = "Dental Care"; // You can replace this with actual data
+
+              cardBodyDiv.appendChild(h5Element);
+              cardBodyDiv.appendChild(pElement);
+
+              cardDiv.appendChild(imgElement);
+              cardDiv.appendChild(cardBodyDiv);
+
+              imagesContainer.appendChild(cardDiv);
+          });
+      }
+
+      loadImages();
+  </script>
   </body>
 </html>
